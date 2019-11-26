@@ -197,8 +197,8 @@ def _locateAll_opencv(needleImage, haystackImage, grayscale=None, limit=10000, r
     haystackImage = _load_cv2(haystackImage, grayscale)
 
     if region:
-        haystackImage = haystackImage[region[1]:region[1]+region[3],
-                                      region[0]:region[0]+region[2]]
+        haystackImage = haystackImage[region[1]:region[3],
+                                      region[0]:region[2]]
     else:
         region = (0, 0)  # full image; these values used in the yield statement
     if (haystackImage.shape[0] < needleImage.shape[0] or
